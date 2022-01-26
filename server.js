@@ -6,7 +6,7 @@ const swaggerUI = require("swagger-ui-express");
 const port = process.env.PORT || 5000
 
 
-mongoose.connect("mongodb://localhost/employees", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://Beeriand:<password>@cluster0.qmjsd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useNewUrlParser: true});
 const db = mongoose.connection;
 db.on("error", (error)=> console.error(error));
 db.once("open", ()=>console.log("Connected with Database"));

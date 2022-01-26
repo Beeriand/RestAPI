@@ -19,7 +19,7 @@ const options ={
     },
     servers:[
     {
-        url: "http://localhost:8080"
+        url: "http://restapi-env.eba-g8qkuimt.eu-west-3.elasticbeanstalk.com/"
     }
     ],
 },

@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUI = require("swagger-ui-express");
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 3000
 
 
 mongoose.connect("mongodb://localhost/employees", {useNewUrlParser: true});

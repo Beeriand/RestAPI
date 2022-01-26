@@ -107,13 +107,6 @@ router.get("/:id", getEmployeer, (req, res)=>{
  *  post:
  *      summary: Create a new employee
  *      tags: [Employees]
- *      parameters:
- *          - in: path
- *            name: id
- *            schema:
- *              type: string
- *            required: true
- *            description: ID of the employee  
  *      requestBody:
  *          required: true
  *          content:

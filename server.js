@@ -19,7 +19,7 @@ const options ={
     },
     servers:[
     {
-        url: "http://restapi-env.eba-g8qkuimt.eu-west-3.elasticbeanstalk.com/"
+        url: "http://restapi-env.eba-g8qkuimt.eu-west-3.elasticbeanstalk.com"
     }
     ],
 },
@@ -35,5 +35,5 @@ app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(spec));
 const employeesRouter = require("./routes/employees");
 app.use("/employees", employeesRouter);
 
-app.listen(process.env.port, () => console.log("Server Started"));
+app.listen(8080, () => console.log("Server Started"));
 

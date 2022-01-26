@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUI = require("swagger-ui-express");
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 3000
 
 
 mongoose.connect("mongodb+srv://Beeriand:adizaq145236!@Cluster0.qmjsd.mongodb.net/Claster0?retryWrites=true&w=majority", {useNewUrlParser: true});

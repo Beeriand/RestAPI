@@ -4,10 +4,12 @@ const mongoose = require("mongoose");
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUI = require("swagger-ui-express");
 
-mongoose.connect("mongodb://http://restapi-env.eba-g8qkuimt.eu-west-3.elasticbeanstalk.com/employees", {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASE_URL);
 const db = mongoose.connection;
 db.on("error", (error)=> console.error(error));
 db.once("open", ()=>console.log("Connected with Database"));
+
+const port = process.env.PORT || 3000
 
 const options ={
     definition: {
@@ -19,7 +21,7 @@ const options ={
     },
     servers:[
     {
-        url: "http://restapi-env.eba-g8qkuimt.eu-west-3.elasticbeanstalk.com"
+        url: "http://localhost:3000"
     }
     ],
 },
@@ -35,5 +37,5 @@ app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(spec));
 const employeesRouter = require("./routes/employees");
 app.use("/employees", employeesRouter);
 
-app.listen(8080, () => console.log("Server Started"));
+app.listen(port, () => console.log("Server Started"));
 

@@ -3,13 +3,13 @@ const app = express();
 const mongoose = require("mongoose");
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUI = require("swagger-ui-express");
+const port = process.env.PORT || 5000
 
-mongoose.connect("http://restapi-env.eba-g8qkuimt.eu-west-3.elasticbeanstalk.com/employees", {useNewUrlParser: true});
+
+mongoose.connect("mongodb://localhost/employees", {useNewUrlParser: true});
 const db = mongoose.connection;
 db.on("error", (error)=> console.error(error));
 db.once("open", ()=>console.log("Connected with Database"));
-
-const port = process.env.PORT || 5000
 
 const options ={
     definition: {
@@ -21,7 +21,7 @@ const options ={
     },
     servers:[
     {
-        url: ["http://localhost:5000"]
+        url: ["http://localhost:3000"]
     }
     ],
 },
